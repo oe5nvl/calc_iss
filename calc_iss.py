@@ -1,5 +1,3 @@
-
-
 ################################################################
 # Deep Space Set_Oberating_Mode
 # Groundstation software
@@ -12,13 +10,7 @@ from skyfield.api import load
 import time, datetime
 from datetime import datetime
 
-
-###################
-# LEO
-###################
-#
 # https://rhodesmill.org/skyfield/earth-satellites.html
-
 
 
 sat_qrg           = 145.8
@@ -35,7 +27,6 @@ alt, az, distance  = topocentric.altaz()
 range_velocity     = topocentric.velocity.km_per_s
 range_speed        = math.sqrt(range_velocity[0]**2 + range_velocity[1]**2+range_velocity[2]**2)
 doppler            = (1 + range_speed * 1e3 / 299792458)  * sat_qrg - sat_qrg
-
 
 print()    
 print("****************************************************")
