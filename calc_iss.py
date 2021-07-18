@@ -3,15 +3,14 @@
 # Groundstation software
 # (c) oe5nvl, oe5rnl
 #
+# https://rhodesmill.org/skyfield/earth-satellites.html
+#
 
 import math
 from skyfield.api import Star, Topos, Loader
 from skyfield.api import load
 import time, datetime
 from datetime import datetime
-
-# https://rhodesmill.org/skyfield/earth-satellites.html
-
 
 sat_qrg           = 145.8
 sat_name          = "ISS (ZARYA)"
