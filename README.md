@@ -3,7 +3,7 @@ Calculates the position of ISS for a given observer location.
 
 # Install
 ```
-git clone https://github.com/oe5nvl/calc_leo.git
+git clone https://github.com/oe5nvl/calc_iss.git
 ```
 # Start calculation with:
 ```
