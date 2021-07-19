@@ -12,19 +12,19 @@ from skyfield.api import load
 import time, datetime
 from datetime import datetime
 
-sat_qrg           = 145.8
-sat_name          = "ISS (ZARYA)"
+sat_qrg                           = 145.8
+sat_name                          = "ISS (ZARYA)"
 
-satellites        = load.tle("http://celestrak.com/NORAD/elements/stations.txt") # get TLE
-ts_               = load.timescale()
-t                 = ts_.now()                                                    # Time
+satellites                        = load.tle("http://celestrak.com/NORAD/elements/stations.txt") # get TLE
+ts_                               = load.timescale()
+t                                 = ts_.now()                                                    # Time
 
-dss_qth            = Topos("48.3314536111111N","13.9797030555556E")
-relative_postion   = satellites[sat_name] - dss_qth
-topocentric        = relative_postion.at(t)
-alt, az, distance  = topocentric.altaz()
+dss_qth                           = Topos("48.3314536111111N","13.9797030555556E")
+relative_postion                  = satellites[sat_name] - dss_qth
+topocentric                       = relative_postion.at(t)
+alt, az, distance                 = topocentric.altaz()
 _, _, the_range, _, _, range_rate = topocentric.frame_latlon_and_rates(dss_qth)  # new calculation methode @skyfield
-doppler            = (1 + range_rate.km_per_s * 1e3 / 299792458)  * sat_qrg - sat_qrg
+doppler                           = (1 + range_rate.km_per_s * 1e3 / 299792458)  * sat_qrg - sat_qrg
 
 print()    
 print("****************************************************")
