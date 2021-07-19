@@ -28,19 +28,19 @@ doppler            = (1 + range_rate.km_per_s * 1e3 / 299792458)  * sat_qrg - sa
 
 print()    
 print("****************************************************")
-print("Time_JD:      "+str(t))                       # observation time 
-print("Time_UTC:     "+str(t.utc_datetime()))        # observation time 
-print("Name:         "+str(sat_name))                # Sat name   
-print("QRG:          "+str(sat_qrg))                 # QRG
-print("Doppler:      "+str(doppler))                 # dopper shift
-print("Rx_QRG:       "+str(sat_qrg+doppler))         # Rx QRG
-print("Az:           "+str(az.degrees))              # az
-print("El:           "+str(alt.degrees))             # el
-print("Distance.km:  "+str(the_range.km))            # [km]      distance
-print("Range_speed:  "+str(range_rate.km_per_s))     # [km/s]    delot
-print("Distance.au:  "+str(distance.au))             # [AU]      distance in AU
-print("Distance.lm:  "+str(distance.km / 1.799e+7))  # [l_min]   distance in light Minutes
-print("Distance.ly:  "+str(distance.km / 9.461e+12)) # [LY]      distance in distance in light Years 
+print("Time_JD:          "+str(t))                       # observation time 
+print("Time_UTC:         "+str(t.utc_datetime()))        # observation time 
+print("Name:             "+str(sat_name))                # Sat name   
+print("QRG:              "+str(sat_qrg))                 # QRG
+print("Doppler:          "+str(doppler))                 # dopper shift
+print("Rx_QRG:           "+str(sat_qrg+doppler))         # Rx QRG
+print("Az:               "+str(az.degrees))              # az
+print("El:               "+str(alt.degrees))             # el
+print("Distance.km:      "+str(the_range.km))            # [km]      distance
+print("Range_speed.kms:  "+str(range_rate.km_per_s))     # [km/s]    delot
+print("Distance.au:      "+str(distance.au))             # [AU]      distance in AU
+print("Distance.lm:      "+str(distance.km / 1.799e+7))  # [l_min]   distance in light Minutes
+print("Distance.ly:      "+str(distance.km / 9.461e+12)) # [LY]      distance in distance in light Years 
 print("****************************************************")
 print()
 

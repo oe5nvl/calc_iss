@@ -1,6 +1,9 @@
 # calc_iss
 Calculates the position of ISS for a given observer location.
 
+v0.2: new calculation methode @skyfield: https://rhodesmill.org/skyfield/earth-satellites.html
+
+
 # Install
 ```
 git clone https://github.com/oe5nvl/calc_iss.git
