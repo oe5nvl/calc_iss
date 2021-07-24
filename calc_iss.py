@@ -12,7 +12,7 @@ from skyfield.api import load
 import time, datetime
 from datetime import datetime
 
-sat_qrg                           = 145.8
+sat_qrg                           = 437.550
 sat_name                          = "ISS (ZARYA)"
 
 satellites                        = load.tle("http://celestrak.com/NORAD/elements/stations.txt") # get TLE
