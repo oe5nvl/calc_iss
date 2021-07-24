@@ -46,7 +46,6 @@ print()
 
 
 
-
 #
 # range_velocity     = topocentric.velocity.km_per_s
 # range_speed        = math.sqrt(range_velocity[0]**2 + range_velocity[1]**2+range_velocity[2]**2)
