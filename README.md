@@ -7,6 +7,7 @@ v0.2: new Doppler calculation methode @skyfield: https://rhodesmill.org/skyfield
 # Install
 ```
 git clone https://github.com/oe5nvl/calc_iss.git
+Do not forget to updata TLE Data. Simple delete xx.txt and start te program. It will download TLE.
 ```
 # Start calculation with:
 ```
