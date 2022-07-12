@@ -3,6 +3,14 @@ Calculates the position of ISS for a given observer location.
 
 v0.2: new Doppler calculation methode @skyfield: https://rhodesmill.org/skyfield/earth-satellites.html
 
+Fist Version calc_iss.py
+* loads all Satellites
+
+New in version: calc_iss_v2.py
+* loads only one satellite 
+* load by catalog nr
+* reload TLE Date if older then 7 days
+* change load.tle (obsolte ?) do load.tle_file
 
 # Install
 ```
