@@ -15,26 +15,26 @@ from pytz import timezone
 
 ts_ = sf.load.timescale()
 
-lat  = +48.301
-lon  = +14.3
-dss_qth     = sf.wgs84.latlon(lat,lon)
-
-#sat_qrg    = 437.550  # 
+# obersver location
+lat        = +48.301
+lon        = +14.3
 sat_qrg    = 145.800  # ham radio frequency
 catalog_nr = 25544
-above = 10.0
+above      = 10.0
+
+dss_qth    = sf.wgs84.latlon(lat,lon)
 
 # load tle data for the iss station
 stations_url = 'https://celestrak.com/satcat/tle.php?CATNR={}'.format(catalog_nr)
 filename = 'tle-CATNR-{}.txt'.format(catalog_nr)
 
 satellites = sf.load.tle_file(stations_url, filename=filename)
-by_number = {sat.model.satnum: sat for sat in satellites}
-satellite = by_number[catalog_nr]
+by_number  = {sat.model.satnum: sat for sat in satellites}
+satellite  = by_number[catalog_nr]
 
-t0   = ts_.now()  # Time utc !!!
+t0         = ts_.now()  # Time utc !!!
 
-days = t0 - satellite.epoch
+days       = t0 - satellite.epoch
 print()    
 print("****************************************************")
 print("skyfield.VERSION: "+str(VERSION))
@@ -43,8 +43,8 @@ print('TLE Data:         {:.3f} days away from epoch'.format(days))
 print()
 if abs(days) > 7:
     satellites = sf.load.tle_file(stations_url, filename=filename, reload=True)
-    by_number = {sat.model.satnum: sat for sat in satellites}
-    satellite = by_number[catalog_nr]
+    by_number  = {sat.model.satnum: sat for sat in satellites}
+    satellite  = by_number[catalog_nr]
 
 # calculate sat data
 relative_postion                  = satellite - dss_qth
