@@ -19,7 +19,7 @@ ts_ = sf.load.timescale()
 lat          = +48.301
 lon          = +14.3
 sat_qrg      = 145.800  # ham radio frequency
-catalog_nr   = 25544
+catalog_nr   = 25544    # iss catalog nr
 above        = 10.0
 
 dss_qth      = sf.wgs84.latlon(lat,lon)
