@@ -3,7 +3,7 @@
 ################################################################
 # Deep Space Set_Oberating_Mode
 # Groundstation software v2
-# (c) oe5nvl, oe5rnl
+# (c) oe5nvl, oe5rnl 
 #
 # https://rhodesmill.org/skyfield/earth-satellites.html
 # https://rhodesmill.org/skyfield/examples.html
@@ -45,11 +45,6 @@ if abs(days) > 7:
     satellites = sf.load.tle_file(stations_url, filename=filename, reload=True)
     by_number = {sat.model.satnum: sat for sat in satellites}
     satellite = by_number[catalog_nr]
-
-# line1 = '1 25544U 98067A   22194.51466271  .00006028  00000+0  11379-3 0  9999'
-# line2 = '2 25544  51.6428 206.1919 0004833   7.6129 121.4090 15.49927705349269'
-# satellite = sf.EarthSatellite(line1, line2, 'ISS (ZARYA)', ts_)
-
 
 # calculate sat data
 relative_postion                  = satellite - dss_qth
