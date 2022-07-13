@@ -16,25 +16,25 @@ from pytz import timezone
 ts_ = sf.load.timescale()
 
 # obersver location
-lat        = +48.301
-lon        = +14.3
-sat_qrg    = 145.800  # ham radio frequency
-catalog_nr = 25544
-above      = 10.0
+lat          = +48.301
+lon          = +14.3
+sat_qrg      = 145.800  # ham radio frequency
+catalog_nr   = 25544
+above        = 10.0
 
-dss_qth    = sf.wgs84.latlon(lat,lon)
+dss_qth      = sf.wgs84.latlon(lat,lon)
 
 # load tle data for the iss station
 stations_url = 'https://celestrak.com/satcat/tle.php?CATNR={}'.format(catalog_nr)
-filename = 'tle-CATNR-{}.txt'.format(catalog_nr)
+filename     = 'tle-CATNR-{}.txt'.format(catalog_nr)
 
-satellites = sf.load.tle_file(stations_url, filename=filename)
-by_number  = {sat.model.satnum: sat for sat in satellites}
-satellite  = by_number[catalog_nr]
+satellites   = sf.load.tle_file(stations_url, filename=filename)
+by_number    = {sat.model.satnum: sat for sat in satellites}
+satellite    = by_number[catalog_nr]
 
-t0         = ts_.now()  # Time utc !!!
+t0           = ts_.now()  # Time utc !!!
+days         = t0 - satellite.epoch
 
-days       = t0 - satellite.epoch
 print()    
 print("****************************************************")
 print("skyfield.VERSION: "+str(VERSION))
@@ -56,8 +56,8 @@ doppler                           = (1 + range_rate.km_per_s * 1e3 / 299792458) 
 print("Azimut:           {0:.3f}".format(az.degrees))    # az
 print("Elevation         {0:.3f}".format(alt.degrees))   # el
 print()
-print("Time_JD:          "+str(t0))                       # observation time 
-print("Time_UTC:         "+str(t0.utc_datetime()))        # observation time 
+print("Time_JD:          "+str(t0))                      # observation time 
+print("Time_UTC:         "+str(t0.utc_datetime()))       # observation time 
 print("Name:             "+str(satellite.name))          # Sat name   
 print("QRG:              "+str(sat_qrg))                 # QRG
 print("Doppler:          "+str(doppler))                 # dopper shift
