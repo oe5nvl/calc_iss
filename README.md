@@ -6,7 +6,7 @@ Features:
 
 * Loads the ISS TLE data or for other satellte by CATNR 
 * Load the tle data for the satellite if the tle data is older than 7 days
-* Displays azimut, alivation, doppler shift and other Data
+* Displays azimut, elivation, doppler shift and other Data
 * Displays predicted data for the next n days 
 * If you want to force an immediate reload of the data, delete the .txt file
 
