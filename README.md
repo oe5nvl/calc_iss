@@ -1,9 +1,6 @@
 # calc_iss
-Calculates observer data for the ISS for a given observer location.
 
-```
-Hallo
-```
+This program calculates the iss satelitte position data for a given observer location
 
 Features:
 
