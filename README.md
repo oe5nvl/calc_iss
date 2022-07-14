@@ -5,10 +5,10 @@ This program calculates the iss satelitte position data for a given observer loc
 Features:
 
 * Loads the ISS TLE data or for other satellte by CATNR 
-* Reload TLE Date if older then 7 days
-* Display Azimut, Elivation, doppler shift and other Data
-* Display predict data for the next n days 
-* Delete File tle-CATNR-2544.txt for reload TLE data now and restart the program.
+* Load the tle data for the satellite if the tle data is older than 7 days
+* Displays azimut, alivation, doppler shift and other Data
+* Displays predicted data for the next n days 
+* If you want to force an immediate reload of the data, delete the .txt file
 
 # Install
 
