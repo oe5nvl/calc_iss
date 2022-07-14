@@ -31,6 +31,7 @@ def getTLE(t0, catalog_nr):
             satellites = sf.load.tle_file(stations_url, filename=filename, reload=True)
             by_number  = {sat.model.satnum: sat for sat in satellites}
             satellite  = by_number[catalog_nr]
+            days         = t0 - satellite.epoch
 
         return days, satellite
 
@@ -63,6 +64,8 @@ if __name__ == "__main__":
     observer_qth    = sf.wgs84.latlon(lat,lon)
     ts              = sf.load.timescale()
     t0              = ts.now()  # Time utc !!!
+
+    # get satellite object with actual TLE Data
     days, satellite = getTLE(t0, catalog_nr) 
 
     # calculate satellite data
@@ -73,11 +76,12 @@ if __name__ == "__main__":
     doppler                           = (1 + range_rate.km_per_s * 1e3 / 299792458)  * sat_qrg - sat_qrg
 
     print()    
-    print("****************************************************")
+    print("***********************************************************")
     print("skyfield.VERSION:        "+str(VERSION))
-    print("epoch.utc_jpl            "+str(satellite.epoch.utc_jpl()))
+    print("epoch.utc_jpl:           "+str(satellite.epoch.utc_jpl()))
     print('TLE Data:                {:.3f} days away from epoch'.format(days))
-    print("Satellite:               {0:} degrees over horizon".format(above))
+    print("Satellite must be:       {0:} degrees above the horizon".format(above))
+    print()
     print("Azimut:                  {0:.3f}".format(az.degrees))    # az
     print("Elevation                {0:.3f}".format(alt.degrees))   # el
     print()
@@ -94,10 +98,12 @@ if __name__ == "__main__":
     print("Distance.ly:             "+str(distance.km / 9.461e+12)) # [LY]      distance in distance in light Years 
     print()
 
-    print("Satellite rises and sets:")
+    print("Satellite rises and sets (local time Europe/Vienna):")
+    print()
     r = getPredict(t0, 1, observer_qth, satellite)
     for e in r:
         print(e)
-
+    print("***********************************************************")
+    
 
     
