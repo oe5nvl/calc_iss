@@ -8,8 +8,7 @@
 # https://rhodesmill.org/skyfield/earth-satellites.html
 # https://rhodesmill.org/skyfield/examples.html
 #
-# https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle
-#
+# https://celestrak.org/NORAD/elements/gp.php?GROUP=amateur&FORMAT=tle
 
 import datetime as dt
 import skyfield.api as sf
