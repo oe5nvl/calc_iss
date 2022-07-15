@@ -31,6 +31,8 @@ pip3 install pytz
 # Start calculation with:
 
 ```
+set Observer lan/lon in calc_iss.py then start
+
 python3 ./calc_iss.py
 ```
 
